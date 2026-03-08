@@ -1,7 +1,22 @@
 const app = document.querySelector('#app');
 
+const WINNING_LINES = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6],
+];
+
 const board = Array(9).fill('');
 let currentPlayer = 'X';
+let gameOver = false;
+let winningLine = null;
+let winner = null;
+let isDraw = false;
 
 app.innerHTML = `
   <main class="game">
@@ -22,16 +37,44 @@ for (let index = 0; index < board.length; index += 1) {
   cellButton.setAttribute('role', 'gridcell');
 
   cellButton.addEventListener('click', () => {
-    if (board[index] !== '') {
+    if (board[index] !== '' || gameOver) {
       return;
     }
 
     board[index] = currentPlayer;
-    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+
+    winningLine = getWinningLine(board);
+
+    if (winningLine) {
+      winner = currentPlayer;
+      gameOver = true;
+    } else if (board.every((cell) => cell !== '')) {
+      isDraw = true;
+      gameOver = true;
+    } else {
+      currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    }
+
     render();
   });
 
   boardEl.appendChild(cellButton);
+}
+
+function getWinningLine(currentBoard) {
+  for (const line of WINNING_LINES) {
+    const [a, b, c] = line;
+
+    if (
+      currentBoard[a] !== '' &&
+      currentBoard[a] === currentBoard[b] &&
+      currentBoard[a] === currentBoard[c]
+    ) {
+      return line;
+    }
+  }
+
+  return null;
 }
 
 function render() {
@@ -39,8 +82,19 @@ function render() {
 
   cellButtons.forEach((button, index) => {
     button.textContent = board[index];
-    button.disabled = board[index] !== '';
+    button.disabled = board[index] !== '' || gameOver;
+    button.classList.toggle('winning', Boolean(winningLine && winningLine.includes(index)));
   });
+
+  if (winner) {
+    turnIndicator.textContent = `Player ${winner} wins!`;
+    return;
+  }
+
+  if (isDraw) {
+    turnIndicator.textContent = "It's a draw!";
+    return;
+  }
 
   turnIndicator.textContent = `Player ${currentPlayer}'s turn`;
 }

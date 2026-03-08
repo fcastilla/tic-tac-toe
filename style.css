@@ -62,3 +62,8 @@ body {
   cursor: default;
   background: #e2e8f0;
 }
+
+.cell.winning {
+  background: #fef08a;
+  border-color: #eab308;
+}
