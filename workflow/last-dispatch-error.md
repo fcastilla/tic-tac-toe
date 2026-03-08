@@ -1,25 +1,25 @@
 # LAST DISPATCH ERROR
 
 ## Timestamp
-2026-03-08T00:01:14Z
+2026-03-08T01:47:45Z
 
 ## Agent
 dev
 
 ## Task
-M2-T1
+M3-T3
 
 ## Exit Code
-0
+124
 
 ## Classification
-non_retryable
+retryable
 
 ## Decision
-escalated_to_lead
+requeued
 
 ## Error Summary
-Worker exited successfully but produced no observable progress.
+Worker execution timed out.
 
 ## Output Excerpt
-completed
+No output captured.

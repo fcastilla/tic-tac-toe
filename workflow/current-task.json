@@ -1,26 +1,29 @@
 {
   "projectSlug": "tic-tac-toe",
-  "taskId": "M2-T1",
-  "taskTitle": "Project scaffold and Vite setup",
+  "taskId": "M3-T3",
+  "taskTitle": "Final validation and release notes",
   "assignedAgent": "lead",
-  "state": "needs_lead_review",
+  "state": "done",
   "iteration": 0,
   "maxIterations": 3,
   "acceptanceCriteria": [
-    "`npm run dev` serves the app on localhost without errors",
-    "`npm run build` produces a dist/ bundle with no errors",
-    "index.html, style.css, main.js, package.json, and vite.config.js are all present",
-    "vite.config.js includes a base path setting (commented default, ready for GitHub Pages)",
-    "A local git repo is initialized with an initial commit on branch `dev`",
-    ".gitignore excludes node_modules and dist/"
+    "All project-level acceptance criteria from REQUIREMENTS.md pass (AC-1 through AC-5)",
+    "All git task branches are merged into dev, and dev is merged into main",
+    "RELEASE_NOTES.md is written with version, date, summary of features, and known limitations",
+    "STATUS.md is updated to reflect lifecycle state: released",
+    "BACKLOG.md is updated with all tasks marked done",
+    "All changes committed to main"
   ],
-  "dependencies": [],
-  "branch": "task/M2-T1-scaffold",
-  "lastUpdated": "2026-03-08T00:01:14Z",
-  "notes": "Dispatcher escalated task after no-progress dev run at 2026-03-08T00:01:14Z",
+  "dependencies": [
+    "M3-T2"
+  ],
+  "branch": "task/M3-T3-release",
+  "lastUpdated": "2026-03-08T01:53:00Z",
+  "stateEnteredAt": "2026-03-08T01:53:00Z",
+  "notes": "Test passed; handed off to lead at 2026-03-08T01:53:00Z",
   "dispatchRetries": 0,
   "maxDispatchRetries": 3,
-  "lastDispatchAt": "2026-03-08T00:00:31Z",
-  "lastDispatchError": "Worker exited successfully but produced no observable progress.",
-  "stateEnteredAt": "2026-03-08T00:01:14Z"
+  "lastDispatchAt": "2026-03-08T01:52:37Z",
+  "lastDispatchError": "Lead notification failed: Lead notification timed out.",
+  "leadNotifiedAt": "2026-03-08T01:54:34Z"
 }
