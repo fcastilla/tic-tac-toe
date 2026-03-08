@@ -1,0 +1,26 @@
+{
+  "projectSlug": "tic-tac-toe",
+  "taskId": "M2-T1",
+  "taskTitle": "Project scaffold and Vite setup",
+  "assignedAgent": "lead",
+  "state": "needs_lead_review",
+  "iteration": 0,
+  "maxIterations": 3,
+  "acceptanceCriteria": [
+    "`npm run dev` serves the app on localhost without errors",
+    "`npm run build` produces a dist/ bundle with no errors",
+    "index.html, style.css, main.js, package.json, and vite.config.js are all present",
+    "vite.config.js includes a base path setting (commented default, ready for GitHub Pages)",
+    "A local git repo is initialized with an initial commit on branch `dev`",
+    ".gitignore excludes node_modules and dist/"
+  ],
+  "dependencies": [],
+  "branch": "task/M2-T1-scaffold",
+  "lastUpdated": "2026-03-08T00:01:14Z",
+  "notes": "Dispatcher escalated task after no-progress dev run at 2026-03-08T00:01:14Z",
+  "dispatchRetries": 0,
+  "maxDispatchRetries": 3,
+  "lastDispatchAt": "2026-03-08T00:00:31Z",
+  "lastDispatchError": "Worker exited successfully but produced no observable progress.",
+  "stateEnteredAt": "2026-03-08T00:01:14Z"
+}

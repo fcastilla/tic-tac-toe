@@ -1,0 +1,13 @@
+{
+  "name": "tic-tac-toe",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite src",
+    "build": "vite build src",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
