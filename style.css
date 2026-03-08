@@ -22,4 +22,43 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  padding: 1rem;
+}
+
+.game {
+  width: min(100%, 22rem);
+  display: grid;
+  gap: 1rem;
+}
+
+.game h1 {
+  text-align: center;
+}
+
+#turn-indicator {
+  text-align: center;
+  font-weight: 600;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.cell {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 1px solid #9ca3af;
+  border-radius: 0.5rem;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cell:disabled {
+  cursor: default;
+  background: #e2e8f0;
 }
