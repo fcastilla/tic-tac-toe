@@ -39,6 +39,11 @@ app.innerHTML = `
 
     <p id="turn-indicator" aria-live="polite"></p>
     <div class="board" role="grid" aria-label="Tic Tac Toe board"></div>
+
+    <div class="controls">
+      <button id="new-round-button" type="button">New Round</button>
+      <button id="reset-scores-button" type="button">Reset Scores</button>
+    </div>
   </main>
 `;
 
@@ -47,6 +52,8 @@ const boardEl = document.querySelector('.board');
 const scoreXEl = document.querySelector('#score-x');
 const scoreOEl = document.querySelector('#score-o');
 const scoreDrawsEl = document.querySelector('#score-draws');
+const newRoundButton = document.querySelector('#new-round-button');
+const resetScoresButton = document.querySelector('#reset-scores-button');
 
 for (let index = 0; index < board.length; index += 1) {
   const cellButton = document.createElement('button');
@@ -82,6 +89,33 @@ for (let index = 0; index < board.length; index += 1) {
   });
 
   boardEl.appendChild(cellButton);
+}
+
+newRoundButton.addEventListener('click', () => {
+  resetBoard();
+  render();
+});
+
+resetScoresButton.addEventListener('click', () => {
+  scores = { ...DEFAULT_SCORES };
+
+  try {
+    localStorage.removeItem(SCORE_STORAGE_KEY);
+  } catch {
+    // Ignore localStorage failures; still reset in-memory score display.
+  }
+
+  renderScores();
+});
+
+function resetBoard() {
+  board.fill('');
+  currentPlayer = 'X';
+  gameOver = false;
+  winningLine = null;
+  winner = null;
+  isDraw = false;
+  resultRecorded = false;
 }
 
 function getWinningLine(currentBoard) {

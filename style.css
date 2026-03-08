@@ -75,3 +75,23 @@ body {
   background: #fef08a;
   border-color: #eab308;
 }
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.controls button {
+  border: 1px solid #9ca3af;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: #f8fafc;
+  color: #0f172a;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background: #e2e8f0;
+}
